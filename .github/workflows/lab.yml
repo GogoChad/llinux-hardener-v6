@@ -1,0 +1,15 @@
+name: Hardening integration lab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'docker-lab/**'
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build lab
+        run: docker build -t linux-hardener-lab docker-lab
+      - name: Run lab audit
+        run: docker run --rm linux-hardener-lab

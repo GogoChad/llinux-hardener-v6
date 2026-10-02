@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker-lab/api.Dockerfile
+    ports:
+      - "8000:8000"
+  agent:
+    build:
+      context: .
+      dockerfile: docker-lab/api.Dockerfile
+    command: ["linux-hardener-agent", "--interval", "60", "--server", "http://api:8000/api/scans"]
+    depends_on:
+      - api

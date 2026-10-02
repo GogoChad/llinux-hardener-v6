@@ -1,0 +1,17 @@
+name: Linux Hardener CI
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: pytest
+      - run: python -m hardener audit --fail-on critical --json report.json --sarif report.sarif
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hardener-reports
+          path: report.*
