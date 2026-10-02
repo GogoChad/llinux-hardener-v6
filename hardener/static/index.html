@@ -1,0 +1,9 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Linux Hardener</title>
+<style>body{font-family:system-ui;max-width:1000px;margin:40px auto;padding:0 20px}button{padding:10px 14px}pre{background:#111;color:#ddd;padding:16px;border-radius:8px;overflow:auto}.score{font-size:42px;font-weight:700}</style>
+</head><body><h1>Linux Hardener</h1><p>Mini DevSecOps security dashboard</p><div class="score" id="score">—</div><button onclick="scan()">Run scan</button><h2>Recent scans</h2><pre id="out">Loading…</pre>
+<script>
+async function scan(){const r=await fetch('/api/scan');const d=await r.json();document.getElementById('score').textContent=d.score+'/100';load();}
+async function load(){const r=await fetch('/api/scans');const d=await r.json();document.getElementById('out').textContent=JSON.stringify(d,null,2);}
+load();
+</script></body></html>
