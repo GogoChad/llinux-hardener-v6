@@ -1,0 +1,31 @@
+name: server
+version: 1
+enabled:
+  - SSH-001
+  - SSH-002
+  - SSH-003
+  - SSH-004
+  - SSH-005
+  - SSH-006
+  - FS-001
+  - FS-002
+  - FS-003
+  - FS-004
+  - FS-005
+  - KERNEL-001
+  - KERNEL-002
+  - KERNEL-003
+  - KERNEL-004
+  - KERNEL-005
+  - KERNEL-006
+  - KERNEL-007
+  - FW-001
+  - SERVICE-001
+  - SERVICE-002
+  - LOG-001
+  - LOG-002
+  - MAC-001
+  - NET-001
+  - PKG-001
+  - USER-001
+  - SUDO-001
