@@ -1,6 +1,6 @@
 # Linux Hardener 0.6
 
-Petit projet DevSecOps de hardening et de compliance Linux. Il est volontairement écrit avec des fonctions simples pour rester lisible quand on débute en Python.
+Petit projet DevSecOps de hardening et de compliance Linux.
 
 ## Ce que contient cette version
 
