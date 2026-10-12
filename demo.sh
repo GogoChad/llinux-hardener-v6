@@ -69,7 +69,7 @@ log_section "7. Tests unitaires & Qualité code"
 pytest -q
 
 log_section "8. Audit avec politique spécifique"
-python3 -m hardener audit --policy .policies/server.yml
+python3 -m hardener audit --policy policies/server.yml
 
 log_section "9. Test du laboratoire Docker (Optionnel)"
 if command -v docker &> /dev/null; then
